@@ -20,7 +20,7 @@ const Signup = () => {
     e.preventDefault();
     // console.log(Inputs);
     await axios
-      .post(`${window.location.origin}/api/v1/register`, Inputs)
+      .post(`https://todo-mern-orpin.vercel.app/api/v1/register`, Inputs)
       .then((response) => {
         // console.log(response);
         if (

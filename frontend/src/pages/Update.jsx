@@ -14,7 +14,7 @@ const Update = ({ display, update }) => {
   }, [update]);
   const submit = async () => {
     await axios
-      .post(`${window.location.origin}/api/v2/updateTask/${update._id}`, Inputs)
+      .post(`https://todo-mern-orpin.vercel.app/api/v2/updateTask/${update._id}`, Inputs)
       .then((response) => {
         alert(response.data.message);
       });

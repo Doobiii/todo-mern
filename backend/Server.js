@@ -10,7 +10,7 @@ require("./connection/conn");
 app.use(express.json());
 app.use(cors(
   {
-    origin:["#"],
+    origin:["https://todo-mern-orpin.vercel.app"],
     methods:["POST","GET"],
     credentials:true
   }

@@ -8,7 +8,13 @@ const list = require("./routes/list");
 require("./connection/conn");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin:["#"],
+    methods:["POST","GET"],
+    credentials:true
+  }
+));
 // app.get("/", (req, res) => {
 //   res.send("hi");
 // });

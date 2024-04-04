@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
+require("dotenv").config();
+
 const cors = require("cors");
-const PORT = process.env.PORT || 1000;
+const PORT = process.env.PORT;
 const auth = require("./routes/auth");
 const list = require("./routes/list");
 
@@ -22,6 +24,6 @@ app.get("/", (req, res) => {
 app.use("/api/v1", auth);
 app.use("/api/v2", list);
 
-app.listen(1000, () => {
-  console.log("Server connected to 1000");
+app.listen(PORT, () => {
+  console.log(`Server connected to ${PORT}`);
 });

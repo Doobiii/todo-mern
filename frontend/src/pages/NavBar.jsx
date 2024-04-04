@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { authActions } from "../stores";
@@ -20,20 +20,26 @@ const NavBar = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">Todo App</Navbar.Brand>
+        <Link to="/" className="navbar-brand">
+          Todo App
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="iconsss" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             {!isLoggedIn && (
               <>
-                <Nav.Link href="/signup">Sign Up</Nav.Link>
-                <Nav.Link href="/signin">Login</Nav.Link>
+                <Link to="/signup" className="nav-link">
+                  Sign Up
+                </Link>
+                <Link to="/signin" className="nav-link">
+                  Login
+                </Link>
               </>
             )}
             {isLoggedIn && (
-              <Nav.Link href="/" onClick={logout}>
+              <Link to="/" onClick={logout}>
                 Logout
-              </Nav.Link>
+              </Link>
             )}
           </Nav>
         </Navbar.Collapse>

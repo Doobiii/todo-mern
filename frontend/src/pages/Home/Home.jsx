@@ -16,7 +16,7 @@ const Home = () => {
   };
   const submit = async () => {
     if (id) {
-      await axios.post(`https://todo-mern-orpin.vercel.app/api/v2/addTask`, {
+      await axios.post(`https://todo-mern-3.onrender.com/api/v2/addTask`, {
         todoList: Inputs.todoList,
         id: id,
       });
@@ -33,9 +33,12 @@ const Home = () => {
   const del = async (Cardid) => {
     if (id) {
       await axios
-        .delete(`https://todo-mern-orpin.vercel.app/api/v2/deleteTask/${Cardid}`, {
-          data: { id: id },
-        })
+        .delete(
+          `https://todo-mern-3.onrender.com/api/v2/deleteTask/${Cardid}`,
+          {
+            data: { id: id },
+          }
+        )
         .then(() => {
           alert("Task is Deleted");
         });
@@ -54,7 +57,7 @@ const Home = () => {
     if (id) {
       const fetch = async () => {
         await axios
-          .get(`https://todo-mern-orpin.vercel.app/api/v2/getTasks/${id}`)
+          .get(`https://todo-mern-3.onrender.com/api/v2/getTasks/${id}`)
           .then((response) => {
             // console.log(id);
             SetArray(response.data.list);

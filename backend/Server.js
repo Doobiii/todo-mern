@@ -10,14 +10,7 @@ const list = require("./routes/list");
 require("./connection/conn");
 
 app.use(express.json());
-app.use(
-  cors()
-  //   {
-  //   origin: ["https://todo-mern-front.vercel.app"],
-  //   methods: ["POST", "GET"],
-  //   credentials: true,
-  // }
-);
+app.use(cors());
 app.get("/", (req, res) => {
   res.send("hi");
 });

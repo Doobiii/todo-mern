@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./signup.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MDBContainer, MDBInput, MDBBtn } from "mdb-react-ui-kit";
 const Signup = () => {
@@ -83,7 +84,7 @@ const Signup = () => {
 
             <div className="text-center">
               <p>
-                Already Registered? <a href="/signin">Login</a>
+                Already Registered? <Link to="/signin">Login</Link>
               </p>
             </div>
           </div>

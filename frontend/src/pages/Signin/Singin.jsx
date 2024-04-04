@@ -1,6 +1,7 @@
 import "./signin.css";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../stores";
@@ -88,7 +89,7 @@ const Singin = () => {
 
             <div className="text-center">
               <p>
-                Not a member? <a href="/signup">Register</a>
+                Not a member? <Link to="/signup">Register</Link>
               </p>
             </div>
           </div>

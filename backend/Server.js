@@ -11,11 +11,12 @@ require("./connection/conn");
 
 app.use(express.json());
 app.use(
-  cors({
-    origin: ["https://todo-mern-front.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
+  cors()
+  //   {
+  //   origin: ["https://todo-mern-front.vercel.app"],
+  //   methods: ["POST", "GET"],
+  //   credentials: true,
+  // }
 );
 app.get("/", (req, res) => {
   res.send("hi");
